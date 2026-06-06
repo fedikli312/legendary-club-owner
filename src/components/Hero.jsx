@@ -1,9 +1,4 @@
 import { motion } from 'framer-motion'
-import { useEffect, useRef } from 'react'
-
-const PITCH_LINES = [
-  { type: 'center-circle', cx: '50%', cy: '50%', r: '12%' },
-]
 
 function PitchSVG() {
   return (
@@ -20,13 +15,10 @@ function PitchSVG() {
       <line x1="400" y1="0" x2="400" y2="500" stroke="#22c55e" strokeWidth="1.5" />
       <circle cx="400" cy="250" r="80" fill="none" stroke="#22c55e" strokeWidth="1.5" />
       <circle cx="400" cy="250" r="5" fill="#22c55e" />
-      {/* Left penalty box */}
       <rect x="0" y="140" width="130" height="220" fill="none" stroke="#22c55e" strokeWidth="1.5" />
       <rect x="0" y="185" width="55" height="130" fill="none" stroke="#22c55e" strokeWidth="1" />
-      {/* Right penalty box */}
       <rect x="670" y="140" width="130" height="220" fill="none" stroke="#22c55e" strokeWidth="1.5" />
       <rect x="745" y="185" width="55" height="130" fill="none" stroke="#22c55e" strokeWidth="1" />
-      {/* Corner arcs */}
       <path d="M 0 0 Q 15 0 15 15" fill="none" stroke="#22c55e" strokeWidth="1" />
       <path d="M 800 0 Q 785 0 785 15" fill="none" stroke="#22c55e" strokeWidth="1" />
       <path d="M 0 500 Q 15 500 15 485" fill="none" stroke="#22c55e" strokeWidth="1" />
@@ -154,30 +146,83 @@ export default function Hero() {
         >
           What Kind of Manager Are You? →
         </button>
-        <button
+        <a
+          href="https://www.youtube.com/watch?v=13Mw-Tjti4s"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={e => { window.open('https://www.youtube.com/watch?v=13Mw-Tjti4s', '_blank'); }}
           style={{
+            display: 'inline-flex', alignItems: 'center', gap: '8px',
             background: 'transparent', color: 'var(--white)',
             border: '1px solid rgba(240,250,243,0.25)', borderRadius: '6px',
             padding: '16px 36px', fontSize: '15px', fontWeight: 400,
             fontFamily: 'var(--font-body)',
             cursor: 'pointer', letterSpacing: '0.03em',
+            textDecoration: 'none',
             transition: 'all 0.2s',
           }}
-          onMouseEnter={e => { e.target.style.borderColor = 'rgba(240,250,243,0.5)'; e.target.style.transform = 'translateY(-2px)'; }}
-          onMouseLeave={e => { e.target.style.borderColor = 'rgba(240,250,243,0.25)'; e.target.style.transform = 'translateY(0)'; }}
+          onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(240,250,243,0.5)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+          onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(240,250,243,0.25)'; e.currentTarget.style.transform = 'translateY(0)'; }}
         >
-          Watch the Trailer
-        </button>
+          <span style={{
+            width: 28, height: 28, borderRadius: '50%',
+            background: 'rgba(255,255,255,0.12)',
+            display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+            fontSize: '11px',
+          }}>▶</span>
+          Watch Trailer
+        </a>
+      </motion.div>
+
+      {/* Stadium visual */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.6 }}
+        style={{
+          width: '100%',
+          maxWidth: '780px',
+          margin: '56px auto 0',
+          borderRadius: '16px',
+          overflow: 'hidden',
+          border: '1px solid rgba(34,197,94,0.15)',
+          boxShadow: '0 0 80px rgba(34,197,94,0.08)',
+        }}
+      >
+        <img
+          src="/stadium.svg"
+          alt="Football stadium at night — aerial view with green pitch and floodlights"
+          style={{ width: '100%', display: 'block' }}
+        />
+        <div style={{
+          background: 'rgba(10,26,15,0.85)',
+          backdropFilter: 'blur(8px)',
+          padding: '12px 20px',
+          display: 'flex', alignItems: 'center', gap: '12px',
+          borderTop: '1px solid rgba(34,197,94,0.1)',
+        }}>
+          <span style={{ width: 7, height: 7, borderRadius: '50%', background: 'var(--green)', display: 'inline-block', flexShrink: 0, animation: 'pulse 2s infinite' }} />
+          <span style={{ fontSize: '13px', color: 'rgba(240,250,243,0.55)', fontWeight: 300 }}>
+            Season 5 LIVE · Daily matches · Real cash rewards every season
+          </span>
+          <span style={{
+            marginLeft: 'auto', fontSize: '12px', color: 'var(--green)',
+            background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.2)',
+            borderRadius: '100px', padding: '3px 10px', flexShrink: 0,
+          }}>
+            4.5 ★ App Store
+          </span>
+        </div>
       </motion.div>
 
       {/* Stats row */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.8 }}
+        transition={{ duration: 1, delay: 0.9 }}
         style={{
           display: 'flex', gap: 'clamp(24px, 6vw, 80px)',
-          marginTop: '80px', flexWrap: 'wrap', justifyContent: 'center',
+          marginTop: '64px', flexWrap: 'wrap', justifyContent: 'center',
         }}
       >
         {[
