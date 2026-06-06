@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import GameMockup from './GameMockup'
 
 function PitchSVG() {
   return (
@@ -174,45 +175,18 @@ export default function Hero() {
         </a>
       </motion.div>
 
-      {/* Stadium visual */}
+      {/* Game mockup screens */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.6 }}
         style={{
           width: '100%',
-          maxWidth: '780px',
+          maxWidth: '900px',
           margin: '56px auto 0',
-          borderRadius: '16px',
-          overflow: 'hidden',
-          border: '1px solid rgba(34,197,94,0.15)',
-          boxShadow: '0 0 80px rgba(34,197,94,0.08)',
         }}
       >
-        <img
-          src="/stadium.svg"
-          alt="Football stadium at night — aerial view with green pitch and floodlights"
-          style={{ width: '100%', display: 'block' }}
-        />
-        <div style={{
-          background: 'rgba(10,26,15,0.85)',
-          backdropFilter: 'blur(8px)',
-          padding: '12px 20px',
-          display: 'flex', alignItems: 'center', gap: '12px',
-          borderTop: '1px solid rgba(34,197,94,0.1)',
-        }}>
-          <span style={{ width: 7, height: 7, borderRadius: '50%', background: 'var(--green)', display: 'inline-block', flexShrink: 0, animation: 'pulse 2s infinite' }} />
-          <span style={{ fontSize: '13px', color: 'rgba(240,250,243,0.55)', fontWeight: 300 }}>
-            Season 5 LIVE · Daily matches · Real cash rewards every season
-          </span>
-          <span style={{
-            marginLeft: 'auto', fontSize: '12px', color: 'var(--green)',
-            background: 'rgba(34,197,94,0.1)', border: '1px solid rgba(34,197,94,0.2)',
-            borderRadius: '100px', padding: '3px 10px', flexShrink: 0,
-          }}>
-            4.5 ★ App Store
-          </span>
-        </div>
+        <GameMockup />
       </motion.div>
 
       {/* Stats row */}
