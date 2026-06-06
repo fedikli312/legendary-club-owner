@@ -1,0 +1,29 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --pitch: #0a1a0f;
+  --pitch-mid: #0f2318;
+  --pitch-light: #1a3826;
+  --green: #22c55e;
+  --green-bright: #4ade80;
+  --green-dim: #16a34a;
+  --gold: #f59e0b;
+  --gold-dim: #d97706;
+  --white: #f0faf3;
+  --muted: #6b8f77;
+  --font-display: 'Bebas Neue', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--pitch);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+::selection { background: var(--green); color: var(--pitch); }
