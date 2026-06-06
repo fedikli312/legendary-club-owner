@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Legendary Club Owner — Landing Page
 
 A landing page for **Legendary Club Owner** (Efsane Başkan), built for the No Surrender Studio Management Associate case study.
@@ -77,3 +78,6 @@ npx playwright test
 **Why the quiz?** It creates personal investment before asking for a download. Alex finishes 5 questions and sees "THE TACTICIAN" — now the game is about him, not some abstract product.
 
 **What I'd do differently:** Add a real App Store screenshot carousel, integrate a waitlist email capture for the international launch, and A/B test the hero headline.
+=======
+# legendary-club-owner
+>>>>>>> 0a690363bb55874078ad9690fb955cc9465b0a85
