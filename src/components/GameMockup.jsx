@@ -3,7 +3,7 @@ export default function GameMockup() {
     <div style={{
       width: '100%',
       display: 'grid',
-      gridTemplateColumns: 'repeat(3, 1fr)',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
       gap: '12px',
       fontFamily: 'var(--font-body)',
     }}>
